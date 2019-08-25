@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activities.PhoneVerifyActivity">
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/layout_user_verify_code"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_mk_logo"
+        android:layout_marginBottom="@dimen/space_25dp"
+        android:layout_width="@dimen/space_140dp"
+        android:layout_height="@dimen/space_140dp" />
+
+    <!-- Code -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_user_verify_code"
+        android:layout_marginBottom="25dp"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/user_verify_code"
+            android:hint="Verify Code"
+            android:inputType="phone"
+            android:maxLength="6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/verify_layout_message"
+        android:layout_below="@+id/layout_user_verify_code"
+        android:textAlignment="center"
+        android:text="To verify your phone number to enter the code that was sent to your phone"
+        android:layout_marginBottom="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/verify_button"
+        android:layout_below="@+id/verify_layout_message"
+        android:text="Verify Now"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/shape_rectangle_corner_round_black"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:visibility="gone"
+        android:id="@+id/resend_button"
+        android:layout_below="@+id/verify_button"
+        android:text="Resend"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/shape_rectangle_corner_round_black"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

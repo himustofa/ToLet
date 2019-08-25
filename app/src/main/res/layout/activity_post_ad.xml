@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activities.PostAdActivity">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<Button
+            android:id="@+id/close_add_post_btn"
+            android:background="@drawable/button_close_selector"
+            android:layout_gravity="right"
+            android:layout_marginBottom="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />-->
+
+        <!-- Images -->
+        <TextView
+            android:text="@string/add_photo_text"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TableLayout
+            android:background="@drawable/shape_button_border"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+            <TableRow
+                android:id="@+id/image_group"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="5"
+                android:layout_weight="1">
+                <!--<ImageView
+                    android:id="@+id/image1"
+                    android:background="@drawable/shape_image_border"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:id="@+id/image2"
+                    android:background="@drawable/shape_image_border"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:id="@+id/image3"
+                    android:background="@drawable/shape_image_border"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:id="@+id/image4"
+                    android:background="@drawable/shape_image_border"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:id="@+id/image5"
+                    android:background="@drawable/shape_image_border"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />-->
+            </TableRow>
+        </TableLayout>
+
+        <!-- Add Post Button -->
+        <Button
+            android:id="@+id/add_post_image_btn"
+            android:layout_marginBottom="15dp"
+            android:text="@string/post_add_a_photo"
+            android:textColor="@color/white_color"
+            android:background="@drawable/shape_rectangle_corner_round_black"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Owner Name -->
+        <EditText
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+
+            android:id="@+id/owner_name"
+            android:hint="@string/post_owner_name"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Owner Email -->
+        <EditText
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+
+            android:id="@+id/owner_email"
+            android:hint="@string/post_owner_email"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Owner Mobile -->
+        <EditText
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+
+            android:id="@+id/owner_mobile"
+            android:hint="@string/post_owner_mobile"
+            android:inputType="phone"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <CheckBox android:id="@+id/hide_mobile"
+            android:text="@string/post_hide"
+            android:textColor="@color/dark_grey_color"
+            android:layout_marginBottom="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/medium_grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <!-- Property Type -->
+        <Spinner
+            android:id="@+id/property_type"
+            android:entries="@array/property_type_array"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"/>
+
+        <!-- Renter Type -->
+        <Spinner
+            android:id="@+id/renter_type"
+            android:entries="@array/renter_type_array"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"/>
+
+        <!-- Price Range -->
+        <EditText
+            android:id="@+id/rent_price"
+            android:hint="@string/post_price_rent"
+            android:layout_marginBottom="15dp"
+            android:inputType="number"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Bedrooms -->
+        <Spinner
+            android:id="@+id/bedrooms"
+            android:entries="@array/bedrooms_array"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"/>
+
+
+        <!-- Bathrooms -->
+        <Spinner
+            android:id="@+id/bathrooms"
+            android:entries="@array/bathrooms_array"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"/>
+
+
+        <!-- Building Size/ Square Footage -->
+        <EditText
+            android:id="@+id/square_footage"
+            android:hint="@string/post_square_footage"
+            android:layout_marginBottom="15dp"
+            android:inputType="number"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <!-- Amenities/Facilities -->
+        <TextView
+            android:text="@string/filter_amenities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:id="@+id/checkbox_group"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox android:id="@+id/checkbox1"
+                android:text="@string/filter_wasa_connection"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox android:id="@+id/checkbox2"
+                android:text="@string/filter_desco_connection"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox android:id="@+id/checkbox3"
+                android:text="@string/filter_titas_gas_connection"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox android:id="@+id/checkbox4"
+                android:text="@string/filter_balcony"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox android:id="@+id/checkbox5"
+                android:text="@string/filter_roof_top_garden"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox android:id="@+id/checkbox6"
+                android:text="@string/filter_generator"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox android:id="@+id/checkbox7"
+                android:text="@string/filter_lift"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox android:id="@+id/checkbox8"
+                android:text="@string/filter_guard_s_rooms"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox android:id="@+id/checkbox9"
+                android:text="@string/filter_additional_basement_carpark"
+                android:textColor="@color/dark_grey_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Location -->
+        <Spinner
+            android:id="@+id/location"
+            android:entries="@array/locations_array"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"/>
+
+        <!-- Google Maps Selection -->
+        <LinearLayout
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            android:gravity="start|center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/show_maps"
+                android:textSize="@dimen/size_12sp"
+                android:drawableLeft="@drawable/ic_maps_google"
+                android:text="@string/post_select_location"
+                android:padding="15dp"
+                android:background="@drawable/shape_button_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!--<LinearLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+            <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                map:cameraBearing="112.5"
+                map:cameraTargetLat="37.4220041"
+                map:cameraTargetLng="-122.0862515"
+                map:cameraTilt="30"
+                map:cameraZoom="13"
+                map:mapType="normal"
+                map:uiCompass="true"
+                map:uiRotateGestures="true"
+                map:uiScrollGestures="true"
+                map:uiTiltGestures="true"
+                map:uiZoomControls="false"
+                map:uiZoomGestures="true"
+                tools:ignore="MissingPrefix"/>
+        </LinearLayout>-->
+        <TextView
+            android:id="@+id/latitude"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/longitude"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Address -->
+        <EditText
+            android:id="@+id/address"
+            android:hint="@string/post_address"
+            android:gravity="top"
+            android:visibility="gone"
+            android:layout_marginBottom="15dp"
+            android:inputType="textCapSentences|textAutoCorrect|text|textMultiLine"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <!-- Description -->
+        <EditText
+            android:id="@+id/description"
+            android:gravity="top"
+            android:hint="@string/post_description"
+            android:layout_marginBottom="15dp"
+            android:inputType="textCapSentences|textAutoCorrect|text|textMultiLine"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+        <!-- Add Post Button -->
+        <Button
+            android:id="@+id/add_post_btn"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/post_add_post"
+            android:textColor="@color/white_color"
+            android:background="@drawable/shape_rectangle_corner_round_black"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</ScrollView>

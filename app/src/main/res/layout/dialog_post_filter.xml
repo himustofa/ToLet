@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/post_filter_id"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:weightSum="3"
+            android:padding="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/filter_dialog_cancel"
+                    android:textAlignment="center"
+                    android:text="@string/filter_dialog_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:text="@string/filter_dialog_title"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/filter_dialog_reset"
+                    android:text="@string/filter_dialog_reset"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/medium_grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <!-- Location Search -->
+        <!--<SearchView
+            android:id="@+id/filter_location"
+            android:layout_marginBottom="10dp"
+            android:queryHint="@string/filter_location_search"
+            android:background="@drawable/selector_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </SearchView>-->
+        <Spinner
+            android:id="@+id/filter_location"
+            android:entries="@array/locations_array"
+            android:background="@drawable/shape_edit_text_border"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"/>
+
+
+        <!-- Price Range -->
+        <TextView
+            android:text="@string/filter_price_range"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+                android:id="@+id/filter_price_range"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                app:absoluteMaxValue="1000"
+                app:absoluteMinValue="100000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/range_min"
+                android:hint="@string/hint_min"
+                android:textSize="12sp"
+                android:textColor="@color/dark_grey_color"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/range_max"
+                android:hint="@string/hint_max"
+                android:textSize="12sp"
+                android:textColor="@color/dark_grey_color"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <!-- Property Type -->
+        <TextView
+            android:text="@string/filter_property_type"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TableLayout
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/propertyBtn0"
+                        android:text="@string/filter_any"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/propertyBtn1"
+                        android:text="@string/filter_apartments"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/propertyBtn2"
+                        android:text="@string/filter_houses"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/propertyBtn3"
+                        android:text="@string/filter_rooms"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/propertyBtn4"
+                        android:text="@string/filter_garages"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/propertyBtn5"
+                        android:text="@string/filter_commercial"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+            </TableRow>
+        </TableLayout>
+
+
+        <!-- Renter Type -->
+        <TextView
+            android:text="@string/filter_renter_type"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TableLayout
+            android:id="@+id/filter_renter"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/renterBtn0"
+                        android:text="@string/filter_any"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/renterBtn1"
+                        android:text="@string/filter_boys"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/renterBtn2"
+                        android:text="@string/filter_girls"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/renterBtn3"
+                        android:text="@string/filter_family"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/renterBtn4"
+                        android:text="@string/filter_sublet"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/renterBtn5"
+                        android:text="@string/filter_office"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+            </TableRow>
+        </TableLayout>
+
+
+        <!-- Bedrooms -->
+        <TextView
+            android:text="@string/filter_bedrooms"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TableLayout
+            android:id="@+id/filter_beds"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="5"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/bedBtn0"
+                        android:text="@string/filter_any"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/bedBtn1"
+                        android:text="@string/filter_1"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/bedBtn2"
+                        android:text="@string/filter_2"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/bedBtn3"
+                        android:text="@string/filter_3"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/bedBtn4"
+                        android:text="@string/filter_4_plus"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+            </TableRow>
+        </TableLayout>
+
+
+        <!-- Bathrooms -->
+        <!--<TextView
+            android:text="@string/filter_bathrooms"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TableLayout
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="4"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:text="@string/filter_any"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:text="@string/filter_1"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:text="@string/filter_2"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <Button
+                        android:text="@string/filter_3_plus"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_grey_color"
+                        android:background="@drawable/selector_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+            </TableRow>
+        </TableLayout>-->
+
+
+        <!-- Building Size/ Square Footage -->
+        <!--<TextView
+            android:text="@string/filter_square_footage"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />-->
+
+
+        <!-- Amenities/Facilities -->
+        <!--<TextView
+            android:text="@string/filter_amenities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <CheckBox android:id="@+id/checkbox1"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_wasa_connection" />
+        <CheckBox android:id="@+id/checkbox2"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_desco_connection" />
+        <CheckBox android:id="@+id/checkbox3"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_titas_gas_connection" />
+        <CheckBox android:id="@+id/checkbox4"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_balcony" />
+        <CheckBox android:id="@+id/checkbox5"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_roof_top_garden" />
+        <CheckBox android:id="@+id/checkbox6"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_generator" />
+        <CheckBox android:id="@+id/checkbox7"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_lift" />
+        <CheckBox android:id="@+id/checkbox8"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_guard_s_rooms" />
+        <CheckBox android:id="@+id/checkbox9"
+            android:textColor="@color/dark_grey_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_additional_basement_carpark" />-->
+
+
+        <!-- Filter Button -->
+        <Button
+            android:id="@+id/filter_btn"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/filter_view_results"
+            android:textColor="@color/white_color"
+            android:background="@drawable/shape_rectangle_corner_round_black"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/post_details_id"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:background="@color/white_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<Button
+            android:id="@+id/close_post_details"
+            android:background="@drawable/button_close_selector"
+            android:layout_gravity="right"
+            android:layout_marginBottom="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />-->
+
+        <!-- Images -->
+        <RelativeLayout
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <ImageView
+                android:id="@+id/image1"
+                android:background="@drawable/shape_edit_text_border"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+            <ImageButton
+                android:id="@+id/post_share"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_share_black_24dp"
+                android:layout_gravity="right"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+            <ImageButton
+                android:id="@+id/post_favorite"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/selector_button_favorite"
+                android:layout_gravity="right"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+            <TextView
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:text="1/5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <!-- Address -->
+        <LinearLayout
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/details_location"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/post_details_location"
+                android:textColor="@color/deep_grey_color"
+                android:text="Dhaka Cantonment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Rent Price -->
+        <TextView
+            android:id="@+id/post_details_price"
+            android:text="Tk 15,000 /month"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:paddingLeft="15dp"
+            android:paddingRight="25dp"
+            android:textColor="@color/white_color"
+            android:background="@drawable/shape_round_right"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Owner Name -->
+        <TextView
+            android:id="@+id/post_details_owner"
+            android:text="@string/details_for_rent_by"
+            android:textSize="13sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Posted Date -->
+        <TextView
+            android:id="@+id/post_details_date"
+            android:text="@string/details_posted_at"
+            android:textSize="13sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- ================================== -->
+        <View
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/medium_grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <!-- ================================== -->
+
+        <!-- Property Type -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/details_property_type"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/post_details_property"
+                android:textColor="@color/deep_grey_color"
+                android:text="Rooms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Renter Type -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/details_renter_type"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/post_details_renter"
+                android:textColor="@color/deep_grey_color"
+                android:text="Family"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Bedrooms -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/details_bedrooms"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/post_details_beds"
+                android:textColor="@color/deep_grey_color"
+                android:text="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Bathrooms -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/details_bathrooms"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/post_details_baths"
+                android:textColor="@color/deep_grey_color"
+                android:text="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Square Footage -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/details_square_footage"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/post_details_size"
+                android:textColor="@color/deep_grey_color"
+                android:text="1200 (sq. ft)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- ================================== -->
+        <View
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/medium_grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <!-- ================================== -->
+
+        <!-- Amenities -->
+        <TextView
+            android:text="@string/details_amenities"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/post_details_amenities"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/deep_grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Description -->
+        <TextView
+            android:text="@string/details_description"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/post_details_desc"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/deep_grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Google Maps Selection -->
+        <LinearLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <!--<ImageView
+                android:id="@+id/static_google_maps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />-->
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/static_google_maps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.google.android.gms.maps.MapView>
+            <!--<fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:id="@+id/post_details_google_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                map:cameraBearing="112.5"
+                map:cameraTargetLat="37.4220041"
+                map:cameraTargetLng="-122.0862515"
+                map:cameraTilt="30"
+                map:cameraZoom="13"
+                map:mapType="normal"
+                map:uiCompass="true"
+                map:uiRotateGestures="true"
+                map:uiScrollGestures="true"
+                map:uiTiltGestures="true"
+                map:uiZoomControls="false"
+                map:uiZoomGestures="true"
+                tools:ignore="MissingPrefix"/>-->
+            <!--<fragment
+                android:id="@+id/post_details_google_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>-->
+        </LinearLayout>
+
+        <!-- Call and Email Button -->
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:weightSum="100"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="right"
+                android:layout_marginRight="1dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50">
+                <Button
+                    android:id="@+id/post_details_call"
+                    android:text="@string/details_call"
+                    android:textColor="@color/white_color"
+                    android:background="@drawable/shape_rectangle_corner_round_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_45dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="left"
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50">
+                <Button
+                    android:id="@+id/post_details_email"
+                    android:text="@string/details_e_mail"
+                    android:textColor="@color/white_color"
+                    android:background="@drawable/shape_rectangle_corner_round_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_45dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Interest -->
+        <Button
+            android:id="@+id/post_details_interested"
+            android:text="@string/post_details_interest"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_rectangle_corner_round_black"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_45dp" />
+
+        <!-- Reviews|Feedback -->
+        <TextView
+            android:text="@string/details_reviews"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ListView
+            android:id="@+id/post_feedback_list"
+            android:visibility="gone"
+            android:nestedScrollingEnabled="true"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+        </ListView>
+        <RelativeLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/post_details_feedback"
+                android:gravity="top"
+                android:hint="@string/details_feedback"
+                android:inputType="textCapSentences|textAutoCorrect|text|textMultiLine"
+                android:background="@drawable/shape_edit_text_border"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"/>
+            <Button
+                android:id="@+id/post_feedback_btn"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/details_feedback"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/dark_grey_color"
+                android:background="@drawable/selector_button"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

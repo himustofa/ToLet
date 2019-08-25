@@ -1,0 +1,287 @@
+<resources>
+    <string name="app_name">To-Let</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_header_title">Mustofa Kamal</string>
+    <string name="nav_header_subtitle">mustofa2008@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_send">Send</string>
+    <string name="legal">Legal</string>
+    <string name="version">v1.0.0</string>
+
+    <!-- FirebaseMessagingService -->
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
+    <!-- Toolbar/ActionBar Title -->
+    <string name="home_title">Home</string>
+    <string name="settings_title">Settings</string>
+    <string name="posts_list_title">PostsList</string>
+    <string name="post_ad_title">Post Ad</string>
+    <string name="notification_list_title">Notification</string>
+    <string name="notification_title">Notification</string>
+    <string name="favorite_title">Favorite</string>
+    <string name="feedback_title">Feedback</string>
+    <string name="profile_title">My Profile</string>
+    <string name="about_title">About</string>
+    <string name="log_out_title">Log Out</string>
+    <string name="developed_by">Developed by Kamal</string>
+    <string name="apps_details">
+        TO-LET
+        \nApps Version: 1.0.0
+        \nDeveloped by Kamal
+    </string>
+
+    <!-- SignIn and SingUp -->
+    <string name="log_reg_text1">Search and Explore</string>
+    <string name="log_reg_text2">Find accommodation that suits your budget and style.</string>
+    <string name="sing_in">SING IN</string>
+    <string name="sing_up">SING UP</string>
+
+    <!-- ProgressDialog -->
+    <string name="loading_title">Loading</string>
+    <string name="loading">Wait while loading...</string>
+    <string name="progress_img">Image loading...</string>
+    <string name="progress">Please wait...</string>
+
+    <!-- Registration -->
+    <string name="reg_save_btn">Save</string>
+    <string name="reg_phone_number">Phone Number</string>
+    <string name="reg_full_name">Full Name</string>
+    <string name="reg_email">E-mail</string>
+    <string name="reg_render">Renter</string>
+    <string name="reg_owner">Owner</string>
+    <string name="national_identity_card">NID or Passport or Birth Certificate</string>
+    <string name="reg_occupation">Occupation</string>
+
+    <!-- Home -->
+    <string name="home_list_btn">List</string>
+    <string name="home_filter_btn">Filter</string>
+
+    <!-- Filter Dialog -->
+    <string name="filter_dialog_cancel">Cancel</string>
+    <string name="filter_dialog_title">Filter</string>
+    <string name="filter_dialog_reset">Reset</string>
+    <string name="filter_location_search">Search Here</string>
+    <string name="filter_price_range">Price Range</string>
+    <string name="hint_min"><font size="10">Min</font></string>
+    <string name="hint_max"><font size="10">Max</font></string>
+    <string name="filter_property_type">Property Type</string>
+    <string name="filter_any">Any</string>
+    <string name="filter_apartments">Apartments</string>
+    <string name="filter_houses">Houses</string>
+    <string name="filter_rooms">Rooms</string>
+    <string name="filter_garages">Garages</string>
+    <string name="filter_commercial">Commercial</string>
+    <string name="filter_renter_type">Renter Type</string>
+    <string name="filter_boys">Boys</string>
+    <string name="filter_girls">Girls</string>
+    <string name="filter_family">Family</string>
+    <string name="filter_sublet">Sublet</string>
+    <string name="filter_office">Office</string>
+    <string name="filter_bedrooms">Bedrooms</string>
+    <string name="filter_1">1</string>
+    <string name="filter_2">2</string>
+    <string name="filter_3">3</string>
+    <string name="filter_4_plus">4+</string>
+    <string name="filter_bathrooms">Bathrooms</string>
+    <string name="filter_3_plus">3+</string>
+    <string name="filter_square_footage">Square Footage</string>
+    <string name="filter_amenities">Facilities</string>
+    <string name="filter_wasa_connection">WASA Connection</string>
+    <string name="filter_desco_connection">DESCO Connection</string>
+    <string name="filter_titas_gas_connection">TITAS GAS Connection</string>
+    <string name="filter_balcony">Balcony</string>
+    <string name="filter_roof_top_garden">Roof Top Garden</string>
+    <string name="filter_generator">Generator</string>
+    <string name="filter_lift">Lift</string>
+    <string name="filter_guard_s_rooms">Guard\'s Rooms</string>
+    <string name="filter_additional_basement_carpark">Additional Basement Car-Park</string>
+    <string name="filter_view_results">VIEW RESULTS</string>
+
+    <!-- Add Post -->
+    <string name="add_photo_text">Add at least one photo (max 5):</string>
+    <string name="post_owner_name">Owner Name</string>
+    <string name="post_owner_email">Owner Email</string>
+    <string name="post_owner_mobile">Owner Mobile</string>
+    <string name="post_hide">Hide my phone number</string>
+    <string name="post_price_rent">Price rent in (BDT)</string>
+    <string name="post_square_footage">Square Footage</string>
+    <string name="post_select_location">Select your userAddress from google maps</string>
+    <string name="post_address">Address</string>
+    <string name="post_description">Description</string>
+    <string name="post_add_post">+ Post Ad</string>
+    <string name="post_add_a_photo">Add a photo</string>
+
+    <!-- Settings -->
+    <string name="settings_english">English</string>
+    <string name="settings_bangla">Bangla</string>
+    <string name="settings_language_change">Language Change</string>
+
+    <!-- Details Post -->
+    <string name="details_location">Location:</string>
+    <string name="details_for_rent_by">For rent by Kamal</string>
+    <string name="details_posted_at">Posted at 15 Sep 2018</string>
+    <string name="details_property_type">Property Type:</string>
+    <string name="details_renter_type">Renter Type:</string>
+    <string name="details_bedrooms">Bedrooms:</string>
+    <string name="details_bathrooms">Bathrooms:</string>
+    <string name="details_square_footage">Square Footage:</string>
+    <string name="details_amenities">Amenities</string>
+    <string name="details_description">Description</string>
+    <string name="details_reviews">Reviews</string>
+    <string name="details_call">Call</string>
+    <string name="details_e_mail">E-mail</string>
+    <string name="details_feedback">Feedback</string>
+    <string name="post_details_interest">Click here to interest</string>
+
+    <!-- Alert messages -->
+    <string name="network_unavailable">Network connection is not available</string>
+    <string name="location_unavailable">Location service is not enabled</string>
+    <string name="network_location_unavailable">Network connection or location service is not enabled</string>
+    <string name="try_again">Try Again</string>
+    <string name="alert_title">Alert</string>
+    <string name="alert_ok">OK</string>
+    <string name="msg_photo_add">At least one photo and address must be added</string>
+    <string name="msg_email_update">Update your email from My Profile</string>
+    <string name="msg_register_user">Only for register owner allow to post ad</string>
+    <string name="msg_owner_user">Only for register owner allow to get notification</string>
+    <string name="msg_renter">Only for renter</string>
+    <string name="msg_find_reg_user">Do no find any registered user</string>
+    <string name="msg_range">Out of range</string>
+    <string name="msg_favorite_add">Add to your favorite list</string>
+    <string name="msg_interest_title">Interest</string>
+    <string name="msg_interest_msg">Do you want to sent your interest to the owner</string>
+    <string name="msg_yes">Yes</string>
+    <string name="msg_neg">No</string>
+    <string name="msg_remove">Do you want to remove this data?</string>
+    <string name="msg_sign_out">Do you want to sign out?</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="msg_occupation_update">Update your occupation, marital status, address from My Profile</string>
+    <string name="msg_phone_not_available">The phone number is not available please try to sent email</string>
+    <string name="msg_no_email">There are no email clients installed</string>
+    <string name="msg_no_dialer">There are no dialer installed</string>
+    <string name="msg_select_location">Please select location</string>
+    <string name="msg_no_data">There is no data available for the showing</string>
+
+    <!-- Dummy Data -->
+    <string-array name="property_type_array">
+        <item>Property Type</item>
+        <item>Apartments</item>
+        <item>Houses</item>
+        <item>Rooms</item>
+        <item>Garages</item>
+        <item>Commercial</item>
+    </string-array>
+
+    <string-array name="renter_type_array">
+        <item>Renter Type</item>
+        <item>Family</item>
+        <item>Sublet</item>
+        <item>Boys</item>
+        <item>Girls</item>
+        <item>Office</item>
+    </string-array>
+
+    <string-array name="bedrooms_array">
+        <item>Bedrooms</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="bathrooms_array">
+        <item>Bathrooms</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="locations_array">
+        <item>Select Location</item>
+        <item>Adabor</item>
+        <item>Airport</item>
+        <item>Badda</item>
+        <item>Banani</item>
+        <item>Bangshal</item>
+        <item>Bhashantek</item>
+        <item>Cantonment</item>
+        <item>Chackbazar</item>
+        <item>Darussalam</item>
+        <item>Daskhinkhan</item>
+        <item>Demra</item>
+        <item>Dhamrai</item>
+        <item>Dhanmondi</item>
+        <item>Dohar</item>
+        <item>Gandaria</item>
+        <item>Gulshan</item>
+        <item>Hazaribag</item>
+        <item>Jatrabari</item>
+        <item>Kafrul</item>
+        <item>Kalabagan</item>
+        <item>Kamrangirchar</item>
+        <item>Keraniganj</item>
+        <item>Khilgaon</item>
+        <item>Khilkhet</item>
+        <item>Kotwali</item>
+        <item>Lalbag</item>
+        <item>Mirpur Model</item>
+        <item>Mohammadpur</item>
+        <item>Motijheel</item>
+        <item>Mugda</item>
+        <item>Nawabganj</item>
+        <item>New Market</item>
+        <item>Pallabi</item>
+        <item>Paltan</item>
+        <item>Ramna</item>
+        <item>Rampura</item>
+        <item>Rupnagar</item>
+        <item>Sabujbag</item>
+        <item>Savar</item>
+        <item>Shah Ali</item>
+        <item>Shahbag</item>
+        <item>Shahjahanpur</item>
+        <item>Sherebanglanagar</item>
+        <item>Shyampur</item>
+        <item>Sutrapur</item>
+        <item>Tejgaon</item>
+        <item>Tejgaon I/A</item>
+        <item>Turag</item>
+        <item>Uttara</item>
+        <item>Uttara West</item>
+        <item>Uttarkhan</item>
+        <item>Vatara</item>
+        <item>Wari</item>
+    </string-array>
+
+    <string-array name="maps_type_array">
+        <item>"MAP_TYPE_NORMAL"</item>
+        <item>"MAP_TYPE_HYBRID"</item>
+        <item>"MAP_TYPE_TERRAIN"</item>
+    </string-array>
+
+    <string-array name="relation_array">
+        <item>Marital Status</item>
+        <item>Unmarried</item>
+        <item>Married</item>
+        <item>Divorce</item>
+        <item>Widow</item>
+    </string-array>
+
+    <string name="enter_mobile_number">Enter a valid mobile</string>
+    <string name="empty_fields">Empty fields are not allowed.</string>
+    <string name="upload_photo">Please upload your photo</string>
+    <string name="done">Done</string>
+</resources>

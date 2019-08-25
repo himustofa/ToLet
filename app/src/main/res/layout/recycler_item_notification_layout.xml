@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginBottom="@dimen/space_5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/notification_item_id"
+        android:padding="@dimen/space_5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Image -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/userImageUrl"
+            android:layout_gravity="left|center_horizontal"
+            android:contentDescription="@string/nav_header_desc"
+            android:layout_width="@dimen/space_140dp"
+            android:layout_height="@dimen/space_140dp"
+            android:src="@drawable/ic_logo_ride"
+            app:civ_border_width="@dimen/space_1dp"
+            app:civ_border_color="@color/colorWhite"/>
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/userImageUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Rent Price -->
+            <TextView
+                android:id="@+id/userFullName"
+                android:text="User Name"
+                android:textSize="@dimen/size_20sp"
+                android:layout_gravity="left"
+                android:paddingRight="25dp"
+                android:textColor="@color/black_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Address -->
+            <TextView
+                android:id="@+id/userAddress"
+                android:textSize="@dimen/size_16sp"
+                android:text="CB 13/2, Kachukhet, Dhaka Cantonment, Dhaka-1206"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Bed, Bath, Size -->
+            <TextView
+                android:id="@+id/userPhoneNumber"
+                android:textSize="@dimen/size_16sp"
+                android:text="+8801914141707"
+                android:textColor="@color/deep_grey_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="space_1dp">1dp</dimen>
+    <dimen name="space_2dp">2dp</dimen>
+    <dimen name="space_5dp">5dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_10dp">10dp</dimen>
+    <dimen name="space_15dp">15dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_20dp">20dp</dimen>
+    <dimen name="space_25dp">25dp</dimen>
+    <dimen name="space_30dp">30dp</dimen>
+    <dimen name="space_45dp">45dp</dimen>
+    <dimen name="space_50dp">50dp</dimen>
+    <dimen name="space_70dp">70dp</dimen>
+    <dimen name="space_96dp">96dp</dimen>
+    <dimen name="space_100dp">100dp</dimen>
+    <dimen name="space_140dp">140dp</dimen>
+
+    <dimen name="size_10sp">10sp</dimen>
+    <dimen name="size_12sp">12sp</dimen>
+    <dimen name="size_14sp">14sp</dimen>
+    <dimen name="size_16sp">16sp</dimen>
+    <dimen name="size_20sp">20sp</dimen>
+    <dimen name="size_25sp">25sp</dimen>
+    <dimen name="size_30sp">30sp</dimen>
+
+    <dimen name="nav_header_height">250dp</dimen>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />-->
+
+    <item android:id="@+id/standard" android:title="Standard"></item>
+    <item android:id="@+id/silver" android:title="Silver"></item>
+    <item android:id="@+id/retro" android:title="Retro"></item>
+    <item android:id="@+id/dark" android:title="Dark"></item>
+    <item android:id="@+id/night" android:title="Night"></item>
+    <item android:id="@+id/aubergine" android:title="Aubergine"></item>
+</menu>

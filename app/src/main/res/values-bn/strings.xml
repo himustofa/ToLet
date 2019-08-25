@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">To-Let</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Mustofa Kamal</string>
+    <string name="nav_header_subtitle">mustofa2008@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_send">Send</string>
+    <string name="legal">Legal</string>
+    <string name="version">v1.0.0</string>
+
+    <!-- Toolbar/ActionBar Title -->
+    <string name="home_title">হোম</string>
+    <string name="settings_title">সেটিং</string>
+    <string name="posts_list_title">পোস্ট লিস্ট</string>
+    <string name="post_ad_title">পোস্ট এ্যাড</string>
+    <string name="notification_list_title">নোটিফিকেশন</string>
+    <string name="notification_title">নোটিফিকেশন</string>
+    <string name="favorite_title">ফেভারিট</string>
+    <string name="feedback_title">ফিডব্যাক</string>
+    <string name="profile_title">আমার প্রোফাইল</string>
+    <string name="about_title">সম্পর্কিত</string>
+    <string name="log_out_title">প্রস্থান</string>
+    <string name="developed_by">নির্মাণেঃ কামাল</string>
+    <string name="apps_details">
+		টু-লেট
+        \nঅ্যাপস সংস্করণঃ ১.০.০
+        \nনির্মাণেঃ কামাল
+    </string>
+
+    <!-- SignIn and SingUp -->
+    <string name="log_reg_text1">অনুসন্ধান এবং এক্সপ্লোর করুন</string>
+    <string name="log_reg_text2">আপনার বাজেট মধ্যে এবং পছন্দ মতো চমৎকার বাসস্থান খুঁজুন প্রবেশ করুন</string>
+    <string name="sing_in">প্রবেশ করুন</string>
+    <string name="sing_up">তালিকাভুক্ত করুন</string>
+
+    <!-- ProgressDialog -->
+    <string name="loading_title">লোডিং</string>
+    <string name="loading">লোড করার সময় অপেক্ষা করুন...</string>
+    <string name="progress_img">ছবি লোড হচ্ছে...</string>
+    <string name="progress">অনুগ্রহপূর্বক অপেক্ষা করুন...</string>
+
+    <!-- Registration -->
+    <string name="reg_save_btn">সংরক্ষণ করুন</string>
+    <string name="reg_phone_number">মোবাইল নম্বর</string>
+    <string name="reg_full_name">পুরো নাম</string>
+    <string name="reg_email">ই-মেইল</string>
+    <string name="reg_render">Renter</string>
+    <string name="reg_owner">Owner</string>
+    <!--<string name="reg_render">ভাড়াটিয়া</string>
+    <string name="reg_owner">বাড়ির মালিক</string>-->
+    <string name="national_identity_card">জাতীয় পরিচয়পত্র বা পাসপোর্ট বা জন্ম শংসাপত্র</string>
+    <string name="reg_occupation">পেশা</string>
+
+    <!-- Home -->
+    <string name="home_list_btn">তালিকা</string>
+    <string name="home_filter_btn">ছাঁকনি</string>
+
+    <!-- Filter Dialog -->
+    <string name="filter_dialog_cancel">বাতিল</string>
+    <string name="filter_dialog_title">ছাঁকনি</string>
+    <string name="filter_dialog_reset">রিসেট</string>
+    <string name="filter_location_search">এখানে অনুসন্ধান করুন</string>
+    <string name="filter_price_range">মূল্য পরিসীমা</string>
+    <string name="hint_min"><font size="10">ন্যূনতম</font></string>
+    <string name="hint_max"><font size="10">সর্বাধিক</font></string>
+    <string name="filter_property_type">সম্পত্তির প্রকার</string>
+    <string name="filter_any">যেকোন</string>
+    <string name="filter_apartments">অ্যাপার্টমেন্ট</string>
+    <string name="filter_houses">ঘর</string>
+    <string name="filter_rooms">রুম</string>
+    <string name="filter_garages">গ্যারাজ</string>
+    <string name="filter_commercial">ব্যবসায়িক</string>
+    <string name="filter_renter_type">ভাড়াটে প্রকার</string>
+    <string name="filter_boys">ছেলে</string>
+    <string name="filter_girls">মেয়ে</string>
+    <string name="filter_family">পরিবার</string>
+    <string name="filter_sublet">সাবলেট</string>
+    <string name="filter_office">দপ্তর</string>
+    <string name="filter_bedrooms">বেডরুম</string>
+    <string name="filter_1">1</string>
+    <string name="filter_2">2</string>
+    <string name="filter_3">3</string>
+    <string name="filter_4_plus">4+</string>
+    <string name="filter_bathrooms">বাথরুমে</string>
+    <string name="filter_3_plus">3+</string>
+    <string name="filter_square_footage">বর্গক্ষেত্র ফুটেজ</string>
+    <string name="filter_amenities">সুযোগ - সুবিধা</string>
+    <string name="filter_wasa_connection">ওয়াসা সংযোগ</string>
+    <string name="filter_desco_connection">ডেসকো সংযোগ </string>
+    <string name="filter_titas_gas_connection">তিতাস গ্যাস সংযোগ</string>
+    <string name="filter_balcony">বারান্দা</string>
+    <string name="filter_roof_top_garden">ছাদ শীর্ষ গার্ডেন</string>
+    <string name="filter_generator">জেনারেটর</string>
+    <string name="filter_lift">উত্তোলন</string>
+    <string name="filter_guard_s_rooms">গার্ড রুম</string>
+    <string name="filter_additional_basement_carpark">অতিরিক্ত বেসমেন্ট কার পার্ক</string>
+    <string name="filter_view_results">ফলাফল দেখুন</string>
+
+    <!-- Add Post -->
+    <string name="add_photo_text">অন্তত একটি ছবি যোগ করুন (সর্বোচ্চ 5):</string>
+    <string name="post_owner_name">মালিকের নাম</string>
+    <string name="post_owner_email">মালিকের ই-মেইল</string>
+    <string name="post_owner_mobile">মালিকের মোবাইল</string>
+    <string name="post_hide">ফোন নম্বর লুকান</string>
+    <string name="post_price_rent">মূল্য ভাড়া (টাকা)</string>
+    <string name="post_square_footage">বর্গক্ষেত্র ফুটেজ</string>
+    <string name="post_select_location">গুগল ম্যাপ থেকে আপনার ঠিকানা নির্বাচন করুন</string>
+    <string name="post_address">ঠিকানা</string>
+    <string name="post_description">বিবরণ</string>
+    <string name="post_add_post">+ পোস্ট বিজ্ঞাপন</string>
+    <string name="post_add_a_photo">একটি ছবি যোগ করুন</string>
+
+    <!-- Settings -->
+    <string name="settings_english">ইংরেজি</string>
+    <string name="settings_bangla">বাংলা</string>
+    <string name="settings_language_change">ভাষা পরিবর্তন</string>
+
+    <!-- Details Post -->
+    <string name="details_location">অবস্থান:</string>
+    <string name="details_for_rent_by">ভাড়া জন্য কামাল</string>
+    <string name="details_posted_at">পোস্ট 15 সেপ্টেম্বর 2018</string>
+    <string name="details_property_type">সম্পত্তির প্রকার:</string>
+    <string name="details_renter_type">ভাড়াটে প্রকার:</string>
+    <string name="details_bedrooms">বেডরুম:</string>
+    <string name="details_bathrooms">বাথরুমে:</string>
+    <string name="details_square_footage">বর্গক্ষেত্র ফুটেজ:</string>
+    <string name="details_amenities">সুযোগ-সুবিধা</string>
+    <string name="details_description">বিবরণ</string>
+    <string name="details_reviews">পর্যালোচনা</string>
+    <string name="details_call">কল</string>
+    <string name="details_e_mail">ই-মেইল</string>
+    <string name="details_feedback">প্রতিক্রিয়া</string>
+    <string name="post_details_interest">আগ্রহের জন্য এখানে ক্লিক করুন</string>
+
+    <!-- Alert messages -->
+    <string name="network_unavailable">নেটওয়ার্ক সংযোগ নেই</string>
+    <string name="location_unavailable">লোকেশান সার্ভিস চালু নেই</string>
+    <string name="network_location_unavailable">নেটওয়ার্ক সংযোগ অথবা লোকেশান সার্ভিস চালু নেই</string>
+    <string name="try_again">আবার চেষ্টা করুন</string>
+    <string name="alert_title">সতর্ক</string>
+    <string name="alert_ok">সঠিক</string>
+    <string name="msg_photo_add">অন্তত একটি ছবি এবং ঠিকানা যোগ করা আবশ্যক</string>
+    <string name="msg_email_update">আমার প্রোফাইল থেকে আপনার ইমেইল আপডেট করুন</string>
+    <string name="msg_register_user">শুধুমাত্র রেজিস্টার বাড়ির মালিকের জন্য বিজ্ঞাপন পোস্ট করার অনুমতি দেয়া আছে</string>
+    <string name="msg_owner_user">নোটিফিকেশন শুধুমাত্র রেজিস্টার বাড়ির মালিকের জন্য</string>
+    <string name="msg_renter">শুধুমাত্র ভাড়াটে জন্য</string>
+    <string name="msg_find_reg_user">কোন নিবন্ধিত ব্যবহারকারী খুঁজে পাওয়া যায় নি</string>
+    <string name="msg_range">সীমার বাইরে</string>
+    <string name="msg_favorite_add">আপনার প্রিয় তালিকায় যোগ করুন</string>
+    <string name="msg_interest_title">আগ্রহী</string>
+    <string name="msg_interest_msg">আপনি কি বাড়ির মালিকের কাছে আপনার আগ্রহ পাঠাতে চান?</string>
+    <string name="msg_yes">হ্যা</string>
+    <string name="msg_neg">না</string>
+    <string name="msg_sign_out">আপনি কি সাইন আউট করতে চান?</string>
+    <string name="sign_out">সাইন আউট</string>
+    <string name="msg_remove">আপনি কি এই ডেটাটি মুছে ফেলাতে চান?</string>
+    <string name="msg_occupation_update">আপনার প্রফাইল থেকে আপনার পেশা, বৈবাহিক অবস্থা, ঠিকানা আপডেট করুন</string>
+    <string name="msg_phone_not_available">ফোন নম্বর পাওয়া যায় নি, ইমেইল পাঠানোর চেষ্টা করুন</string>
+    <string name="msg_no_email">কোন ইমেইল ক্লায়েন্ট ইনস্টল করা নাই</string>
+    <string name="msg_no_dialer">কোন ডায়ালার ইনস্টল করা নাই</string>
+    <string name="msg_select_location">অবস্থান নির্বাচন করুন</string>
+    <string name="msg_no_data">প্রদর্শনের জন্য কোনও ডেটা উপলব্ধ নেই</string>
+
+    <!--getResources().getString(R.string.msg_photo_add)
+    ""+context.getString(R.string.msg_photo_add)
+    alertDialog-->
+
+    <!-- Dummy Data -->
+    <string-array name="property_type_array">
+        <item>সম্পত্তির প্রকার</item>
+        <item>অ্যাপার্টমেন্ট</item>
+        <item>ঘর</item>
+        <item>রুম</item>
+        <item>গ্যারাজ</item>
+        <item>ব্যবসায়িক</item>
+    </string-array>
+
+    <string-array name="renter_type_array">
+        <item>ভাড়াটের প্রকার</item>
+        <item>পরিবার</item>
+        <item>সাবলেট</item>
+        <item>ছেলে</item>
+        <item>মেয়ে</item>
+        <item>দপ্তর</item>
+    </string-array>
+
+    <string-array name="bedrooms_array">
+        <item>বেডরুম</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="bathrooms_array">
+        <item>বাথরুমে</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="locations_array">
+        <item>আদাবর</item>
+        <item>উত্তরা মডেল</item>
+        <item>উত্তরখান</item>
+        <item>ওয়ারী</item>
+        <item>ক্যান্টনমেন্ট</item>
+        <item>কোতয়ালী</item>
+        <item>কামরাঙ্গীরচর</item>
+        <item>কাফরুল</item>
+        <item>কলাবাগান</item>
+        <item>কদমতলী</item>
+        <item>খিলগাঁও</item>
+        <item>খিলক্ষেত</item>
+        <item>গেন্ডারিয়া</item>
+        <item>গুলশান</item>
+        <item>চকবাজার</item>
+        <item>ডেমরা</item>
+        <item>তেজগাঁও শিল্পাঞ্চল</item>
+        <item>তেজগাঁও</item>
+        <item>তুরাগ</item>
+        <item>দারুস সালাম</item>
+        <item>দক্ষিণখান</item>
+        <item>ধানমন্ডি</item>
+        <item>নিউমার্কেট</item>
+        <item>পল্লবী</item>
+        <item>পল্টন মডেল</item>
+        <item>বিমানবন্দর</item>
+        <item>বাড্ডা</item>
+        <item>বংশাল</item>
+        <item>বনানী</item>
+        <item>ভাষানটেক</item>
+        <item>ভাটারা</item>
+        <item>মোহাম্মদপুর</item>
+        <item>মিরপুর মডেল</item>
+        <item>মতিঝিল</item>
+        <item>যাত্রাবাড়ী</item>
+        <item>রামপুরা</item>
+        <item>রমনা মডেল</item>
+        <item>রূপনগর</item>
+        <item>লালবাগ</item>
+        <item>শ্যামপুর</item>
+        <item>শেরেবাংলা নগর</item>
+        <item>শাহবাগ</item>
+        <item>শাহ আলী</item>
+        <item>শাহজাহানপুর</item>
+        <item>সূত্রাপুর</item>
+        <item>সবুজবাগ</item>
+        <item>হাজারীবাগ</item>
+    </string-array>
+
+    <string-array name="maps_type_array">
+        <item>"MAP_TYPE_NORMAL"</item>
+        <item>"MAP_TYPE_HYBRID"</item>
+        <item>"MAP_TYPE_TERRAIN"</item>
+    </string-array>
+
+    <string-array name="relation_array">
+        <item>Marital Status</item>
+        <item>Unmarried</item>
+        <item>Married</item>
+        <item>Divorce</item>
+        <item>Widow</item>
+    </string-array>
+    <!--<string-array name="relation_array">
+        <item>বৈবাহিক অবস্থা</item>
+        <item>অবিবাহিত</item>
+        <item>বিবাহিত</item>
+        <item>বিবাহবিচ্ছেদ</item>
+        <item>বিধবা</item>
+    </string-array>-->
+
+    <string name="enter_mobile_number">সঠিক মোবাইল নাম্বার দিন</string>
+    <string name="empty_fields">কোন ফিল্ড ফাকা/খালি থাকতে পারবে না</string>
+    <string name="upload_photo">দয়া করে ছবি আপলোড করুন</string>
+    <string name="done">ঠিক আছে</string>
+</resources>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution" package="com.zaaibo.tolet">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- wifi, data, connection -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Request the Camera feature -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <!-- save to phone or sd card directory -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Caution: If your app targets Android 5.0 (API level 21) or higher and uses the ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permission in order to receive location updates from the network or a GPS, respectively, you must also explicitly declare that your app uses the android.hardware.location.network or android.hardware.location.gps hardware features.  -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- access approximate location | Gets location from WiFi and cellular networks -->
+    <uses-feature android:name="android.hardware.location.network" android:required="false" /> <!-- API 20 or lower | ACCESS_COARSE_LOCATION | Gets location from WiFi and cellular networks -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- access precise location | Gets location from Global Positioning System (GPS) as well as WiFi and mobile cell data -->
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" /> <!-- API 20 or lower | ACCESS_FINE_LOCATION | Gets location from Global Positioning System (GPS) -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" /> <!-- Google Services available on the device -->
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <activity
+            android:name=".views.activities.ProfileActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.PhoneVerifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.PhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.FeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.FavoriteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.PostsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.PostAdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.HomeActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait" />
+
+        <!-- Start: Google Maps -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <!-- Start: fabric.io -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="48e94977edd45c608b874d3522a1d78045c05712" />
+
+        <!-- Start: Firebase Cloud Messaging -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_radio_button_checked_black_24dp" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <service
+            android:name=".services.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Start: Android Image Cropper: optional (needed if default theme has no action bar) -->
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+        <!-- Start: To configure the FileProvider for Camera capture -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.zaaibo.tolet"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+        <activity
+            android:theme="@style/AppTheme.Fullscreen"
+            android:name=".views.activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

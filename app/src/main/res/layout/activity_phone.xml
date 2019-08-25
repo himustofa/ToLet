@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activities.PhoneActivity">
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/phone_layout"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_mk_logo"
+        android:layout_marginBottom="@dimen/space_25dp"
+        android:layout_width="@dimen/space_140dp"
+        android:layout_height="@dimen/space_140dp" />
+
+    <!-- Phone -->
+    <LinearLayout
+        android:id="@+id/phone_layout"
+        android:weightSum="100"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30">
+            <Spinner
+                android:id="@+id/country_code_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_user_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/user_phone_number"
+                    android:hint="Mobile Number"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/phone_layout_message"
+        android:layout_below="@+id/phone_layout"
+        android:textAlignment="center"
+        android:text="SMS may be sent to verify your number. Message and data rates may apply."
+        android:layout_marginBottom="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/sent_button"
+        android:layout_below="@+id/phone_layout_message"
+        android:text="Sent"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/shape_rectangle_corner_round_black"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
