@@ -20,7 +20,7 @@ Android mobile application for the searching apartments, houses, offices as a re
 <img src="https://user-images.githubusercontent.com/26080779/63655205-35f18f80-c7a7-11e9-97bf-ea8745d8efed.png" width="400" height="1234" />
 </p>
 <p align="center">
-<img src="https://user-images.githubusercontent.com/26080779/63655208-3b4eda00-c7a7-11e9-9cd1-08e32a609909.png" width="400" height="1446" />
+<img src="https://user-images.githubusercontent.com/26080779/63655442-df398500-c7a9-11e9-95ee-4fb0e66ce86f.png" width="400" height="1446" />
 </p>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/26080779/63655209-3f7af780-c7a7-11e9-97b8-d73c69efc85f.png" width="400" height="861" />
