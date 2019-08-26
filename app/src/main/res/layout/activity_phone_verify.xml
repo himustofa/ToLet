@@ -11,7 +11,7 @@
         android:layout_centerInParent="true"
         android:layout_above="@+id/layout_user_verify_code"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_mk_logo"
+        android:src="@drawable/ic_log_mk"
         android:layout_marginBottom="@dimen/space_25dp"
         android:layout_width="@dimen/space_140dp"
         android:layout_height="@dimen/space_140dp" />

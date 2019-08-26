@@ -48,7 +48,7 @@
             android:name=".views.activities.NotificationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".views.activities.FeedbackActivity"
+            android:name=".views.activities.AboutActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".views.activities.FavoriteActivity"

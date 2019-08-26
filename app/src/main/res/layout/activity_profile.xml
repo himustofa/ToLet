@@ -17,7 +17,7 @@
             android:id="@+id/userImageUrl"
             android:clickable="true"
             android:background="@drawable/shape_image_border"
-            android:src="@drawable/ic_mk_logo"
+            android:src="@drawable/ic_log_mk"
             android:layout_gravity="left"
             android:layout_width="140dp"
             android:layout_height="140dp" />

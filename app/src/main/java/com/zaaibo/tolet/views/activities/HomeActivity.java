@@ -313,7 +313,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
                 break;
             case R.id.about_id:
-                Utility.aboutMe(HomeActivity.this);
+                startActivity(new Intent(HomeActivity.this, AboutActivity.class));
                 break;
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
