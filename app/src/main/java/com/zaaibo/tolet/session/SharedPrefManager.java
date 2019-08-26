@@ -1,4 +1,4 @@
-package com.zaaibo.tolet.sharedprefs;
+package com.zaaibo.tolet.session;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,7 +26,7 @@ public class SharedPrefManager {
     private static final String SHARED_PREF_TOKEN = "shared_pref_app";
     private static final String TAG_TOKEN = "token_key";
 
-    //Singleton Pattern
+    //Singleton Design Pattern
     private static SharedPrefManager mInstance;
     private static Context mCtx;
 
