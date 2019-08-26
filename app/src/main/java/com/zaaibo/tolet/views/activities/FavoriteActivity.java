@@ -3,7 +3,6 @@ package com.zaaibo.tolet.views.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +16,7 @@ import com.crashlytics.android.Crashlytics;
 import com.zaaibo.tolet.R;
 import com.zaaibo.tolet.models.PostAd;
 import com.zaaibo.tolet.services.MyNetworkReceiver;
-import com.zaaibo.tolet.sharedprefs.SharedPrefManager;
+import com.zaaibo.tolet.session.SharedPrefManager;
 import com.zaaibo.tolet.utils.Utility;
 import com.zaaibo.tolet.utils.language.LocaleHelper;
 import com.zaaibo.tolet.viewmodels.PostAdViewModel;

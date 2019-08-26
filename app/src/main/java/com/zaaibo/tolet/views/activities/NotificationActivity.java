@@ -16,7 +16,7 @@ import com.crashlytics.android.Crashlytics;
 import com.zaaibo.tolet.R;
 import com.zaaibo.tolet.models.User;
 import com.zaaibo.tolet.services.MyNetworkReceiver;
-import com.zaaibo.tolet.sharedprefs.SharedPrefManager;
+import com.zaaibo.tolet.session.SharedPrefManager;
 import com.zaaibo.tolet.utils.Utility;
 import com.zaaibo.tolet.utils.language.LocaleHelper;
 import com.zaaibo.tolet.viewmodels.NotificationViewModel;

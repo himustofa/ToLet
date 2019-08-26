@@ -28,7 +28,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.zaaibo.tolet.R;
 import com.zaaibo.tolet.services.MyNetworkReceiver;
-import com.zaaibo.tolet.sharedprefs.SharedPrefManager;
+import com.zaaibo.tolet.session.SharedPrefManager;
 import com.zaaibo.tolet.utils.ConstantKey;
 import com.zaaibo.tolet.utils.Utility;
 import com.zaaibo.tolet.utils.language.LocaleHelper;

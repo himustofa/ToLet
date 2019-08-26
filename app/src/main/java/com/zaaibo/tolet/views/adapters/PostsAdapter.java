@@ -50,7 +50,7 @@ import com.zaaibo.tolet.models.notification.RootModel;
 import com.zaaibo.tolet.repositories.firebase.FirebaseRepository;
 import com.zaaibo.tolet.repositories.retrofit.ApiClient;
 import com.zaaibo.tolet.repositories.retrofit.ApiInterface;
-import com.zaaibo.tolet.sharedprefs.SharedPrefManager;
+import com.zaaibo.tolet.session.SharedPrefManager;
 import com.zaaibo.tolet.utils.LoadImageTask;
 import com.zaaibo.tolet.utils.Utility;
 
