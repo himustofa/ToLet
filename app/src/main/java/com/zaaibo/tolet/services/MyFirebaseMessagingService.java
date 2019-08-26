@@ -20,7 +20,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.zaaibo.tolet.R;
-import com.zaaibo.tolet.sharedprefs.SharedPrefManager;
+import com.zaaibo.tolet.session.SharedPrefManager;
 import com.zaaibo.tolet.views.activities.NotificationActivity;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
