@@ -357,8 +357,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 for (PostAd obj : mArrayList) {
                     LatLng latLng = new LatLng(Double.parseDouble(obj.getLatitude()), Double.parseDouble(obj.getLongitude()));
                     String[] arr = obj.getImageUrl().replaceAll("[\\[\\]]", "").split(",");
-                    //mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                    mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress())).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_house2));
+                    //mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))); //Default Icon
+                    //mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress())).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.admin)); //PNG Icon
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).icon(Utility.getMarkerIconFromDrawable( getApplicationContext().getResources().getDrawable(R.drawable.ic_icon_house) ))); //XML Icon
 
                     mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
                         @Override
