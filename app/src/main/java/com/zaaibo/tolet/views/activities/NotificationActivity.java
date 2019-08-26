@@ -3,7 +3,6 @@ package com.zaaibo.tolet.views.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,7 +41,7 @@ public class NotificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notification);
 
         mNetworkReceiver = new MyNetworkReceiver(this);
-        User mUser = SharedPrefManager.getInstance(NotificationActivity.this).getUserModel();
+        User mUser = SharedPrefManager.getInstance(NotificationActivity.this).getUser();
         mProgress = Utility.showProgressDialog(NotificationActivity.this, getResources().getString( R.string.progress), true);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.notification_recycler_view);

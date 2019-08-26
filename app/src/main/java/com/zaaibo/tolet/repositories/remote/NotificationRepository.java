@@ -3,6 +3,7 @@ package com.zaaibo.tolet.repositories.remote;
 import androidx.lifecycle.MutableLiveData;
 
 import com.zaaibo.tolet.models.User;
+import com.zaaibo.tolet.repositories.firebase.FirebaseRepository;
 
 import java.util.ArrayList;
 

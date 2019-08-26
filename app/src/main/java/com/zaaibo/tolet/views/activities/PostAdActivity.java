@@ -34,9 +34,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import com.zaaibo.tolet.R;
@@ -87,7 +85,7 @@ public class PostAdActivity extends AppCompatActivity {
         //===============================================| Receive the data and observe the data from view model
         mPostAdViewModel = ViewModelProviders.of(this).get(PostAdViewModel.class); //Initialize view model
 
-        mUser = SharedPrefManager.getInstance(PostAdActivity.this).getUserModel();
+        mUser = SharedPrefManager.getInstance(PostAdActivity.this).getUser();
         mLatLng = SharedPrefManager.getInstance(PostAdActivity.this).getCurrentLatLng();
 
         //====================================================| findViewById Initialing

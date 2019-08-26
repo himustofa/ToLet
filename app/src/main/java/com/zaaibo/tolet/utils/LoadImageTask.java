@@ -11,13 +11,13 @@ import com.zaaibo.tolet.R;
 
 import java.io.InputStream;
 
-public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+public class LoadImageTask extends AsyncTask<String, Void, Bitmap> {
 
     private Context context;
     private ProgressDialog progress;
     private ImageView bmImage;
 
-    public DownloadImageTask(Context context, ImageView bmImage) {
+    public LoadImageTask(Context context, ImageView bmImage) {
         this.context = context;
         this.bmImage = bmImage;
     }

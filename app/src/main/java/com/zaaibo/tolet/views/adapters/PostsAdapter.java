@@ -47,11 +47,11 @@ import com.zaaibo.tolet.models.notification.DataModel;
 import com.zaaibo.tolet.models.notification.NotificationModel;
 import com.zaaibo.tolet.models.PostAd;
 import com.zaaibo.tolet.models.notification.RootModel;
-import com.zaaibo.tolet.repositories.remote.FirebaseRepository;
+import com.zaaibo.tolet.repositories.firebase.FirebaseRepository;
 import com.zaaibo.tolet.repositories.retrofit.ApiClient;
 import com.zaaibo.tolet.repositories.retrofit.ApiInterface;
 import com.zaaibo.tolet.sharedprefs.SharedPrefManager;
-import com.zaaibo.tolet.utils.DownloadImageTask;
+import com.zaaibo.tolet.utils.LoadImageTask;
 import com.zaaibo.tolet.utils.Utility;
 
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
     public PostsAdapter(Context mContext, ArrayList<PostAd> arrayList) {
         this.mContext = mContext;
         this.arrayList = arrayList;
-        this.mUser = SharedPrefManager.getInstance(mContext).getUserModel();
+        this.mUser = SharedPrefManager.getInstance(mContext).getUser();
     }
 
     @NonNull
@@ -220,7 +220,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
         ((ImageButton) dialog.findViewById(R.id.post_favorite)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPrefManager.getInstance(mContext).saveFavoriteItems(model.getOwnerAuthId());
+                SharedPrefManager.getInstance(mContext).saveFavoriteItem(model.getOwnerAuthId());
             }
         });
 
@@ -324,7 +324,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
             img.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 800));
             img.setBackground(mContext.getResources().getDrawable(R.drawable.shape_image_border));
             imgGroup.addView(img);
-            new DownloadImageTask(mContext, img).execute(s);
+            new LoadImageTask(mContext, img).execute(s);
             //Picasso.get().load(arr[i]).into(img);
             //Glide.with(mContext).asBitmap().load(arr[0]).into(img);
 

@@ -44,7 +44,7 @@ public class FavoriteActivity extends AppCompatActivity {
         mNetworkReceiver = new MyNetworkReceiver(this);
         mProgress = Utility.showProgressDialog(FavoriteActivity.this, getResources().getString( R.string.progress), true);
 
-        //SharedPrefManager.getInstance(FavoriteActivity.this).removeData();
+        //SharedPrefManager.getInstance(FavoriteActivity.this).deleteFavoriteItems();
         ArrayList<String> arrayList = SharedPrefManager.getInstance(FavoriteActivity.this).getFavoriteItems();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.favorite_recycler_view);

@@ -1,4 +1,4 @@
-package com.zaaibo.tolet.repositories.remote;
+package com.zaaibo.tolet.repositories.firebase;
 
 import android.net.Uri;
 import android.util.Log;
@@ -28,10 +28,96 @@ import com.zaaibo.tolet.utils.ConstantKey;
 
 import java.util.ArrayList;
 
-public class FirebaseRepository {
+public class FirebaseRepository implements IFirebaseRepository {
 
     private static final String TAG = "FirebaseRepository";
     private DatabaseReference mDatabaseRef;
+
+    /**********************************************************************************
+     * Get/Fetch
+     ***********************************************************************************/
+
+    @Override
+    public User getUserById(String mAuthId) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<PostAd> getPostAdList() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<PostAd> getAllPostAdByFilter(Filter mFilter) {
+        return null;
+    }
+
+    @Override
+    public PostAd getPostAdById(String mAuthId) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<User> getAllNotificationById(String mAuthId) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Feedback> getAllFeedback(String mAuthId) {
+        return null;
+    }
+
+    /**********************************************************************************
+     * Save
+     ***********************************************************************************/
+
+    @Override
+    public String saveUser(User mUser) {
+        return null;
+    }
+
+    @Override
+    public String savePostAd(PostAd mPostAd) {
+        return null;
+    }
+
+    @Override
+    public String saveNotification(String mOwnerAuthId, User mUser) {
+        return null;
+    }
+
+    @Override
+    public String saveFeedback(Feedback mFeedback) {
+        return null;
+    }
+
+    /**********************************************************************************
+     * Save Image
+     ***********************************************************************************/
+
+    @Override
+    public String saveImageByPath(Uri uri, String mDirectory, String mAuthId) {
+        return null;
+    }
+
+    /**********************************************************************************
+     * Delete
+     ***********************************************************************************/
+
+    @Override
+    public String deleteFeedbackById(String mAuthId) {
+        return null;
+    }
+
+    @Override
+    public String deletePostAdById(String mOwnerAuthId) {
+        return null;
+    }
+
+    @Override
+    public String deleteImageByUrl(String mImageUrl) {
+        return null;
+    }
 
     //===============================================| Get
     public void getUserData(final UserCallback mCallback, String mUserAuthId) {
@@ -53,6 +139,7 @@ public class FirebaseRepository {
             }
         });
     }
+
     public interface UserCallback {
         void onCallback(User model);
     }

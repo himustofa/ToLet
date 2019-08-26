@@ -20,7 +20,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.zaaibo.tolet.R;
-import com.zaaibo.tolet.sharedprefs.TokenPrefManager;
+import com.zaaibo.tolet.sharedprefs.SharedPrefManager;
 import com.zaaibo.tolet.views.activities.NotificationActivity;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -122,6 +122,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
         Log.d(TAG, token);
-        TokenPrefManager.getInstance(getApplicationContext()).saveDeviceToken(token);
+        SharedPrefManager.getInstance(getApplicationContext()).saveDeviceToken(token);
     }
 }

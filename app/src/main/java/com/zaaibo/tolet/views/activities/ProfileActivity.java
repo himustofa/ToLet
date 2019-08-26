@@ -41,7 +41,6 @@ import com.zaaibo.tolet.R;
 import com.zaaibo.tolet.models.User;
 import com.zaaibo.tolet.services.MyNetworkReceiver;
 import com.zaaibo.tolet.sharedprefs.SharedPrefManager;
-import com.zaaibo.tolet.sharedprefs.TokenPrefManager;
 import com.zaaibo.tolet.utils.ConstantKey;
 import com.zaaibo.tolet.utils.PermissionUtility;
 import com.zaaibo.tolet.utils.Utility;
@@ -130,7 +129,7 @@ public class ProfileActivity extends AppCompatActivity {
             mAuthId = SharedPrefManager.getInstance(ProfileActivity.this).getUserAuthId();
         }
         mPhone = SharedPrefManager.getInstance(ProfileActivity.this).getPhoneNumber();
-        mToken = TokenPrefManager.getInstance(ProfileActivity.this).getDeviceToken();
+        mToken = SharedPrefManager.getInstance(ProfileActivity.this).getDeviceToken();
 
         userPhoneNumber.setText(mPhone);
 
@@ -267,7 +266,7 @@ public class ProfileActivity extends AppCompatActivity {
     //===============================================| Insert into Firebase Database
     private void storeToDatabase(String mAuthId, String name, String relation, String occupation, String email, String phone, String birth, String address, String isUserOwner, String mImageUrl, String mToken) {
         User obj = new User(mAuthId, name, relation, occupation, email, phone, birth, address, isUserOwner, mImageUrl, mToken);
-        SharedPrefManager.getInstance(ProfileActivity.this).saveUserModel(obj);
+        SharedPrefManager.getInstance(ProfileActivity.this).saveUser(obj);
         mUserViewModel.storeUser(obj).observe(this, new Observer<String>() {
             @Override
             public void onChanged(String result) {

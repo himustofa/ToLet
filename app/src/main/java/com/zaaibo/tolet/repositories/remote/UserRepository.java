@@ -5,8 +5,7 @@ import android.net.Uri;
 import androidx.lifecycle.MutableLiveData;
 
 import com.zaaibo.tolet.models.User;
-
-import java.util.ArrayList;
+import com.zaaibo.tolet.repositories.firebase.FirebaseRepository;
 
 //Singleton pattern
 public class UserRepository {

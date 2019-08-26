@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.zaaibo.tolet.models.Filter;
 import com.zaaibo.tolet.models.PostAd;
+import com.zaaibo.tolet.repositories.firebase.FirebaseRepository;
 
 import java.util.ArrayList;
 

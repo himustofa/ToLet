@@ -122,7 +122,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         mNetworkReceiver = new MyNetworkReceiver(this);
         mLocationReceiver = new MyLocationReceiver(this);
-        mUser = SharedPrefManager.getInstance(HomeActivity.this).getUserModel();
+        mUser = SharedPrefManager.getInstance(HomeActivity.this).getUser();
 
         //-----------------------------------------------| GPS/Location
         manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -231,7 +231,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 .setPositiveButton(R.string.sign_out, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
-                        SharedPrefManager.getInstance(HomeActivity.this).removeSharedPref();
+                        SharedPrefManager.getInstance(HomeActivity.this).deleteCurrentSession();
                         FirebaseAuth.getInstance().signOut();
                         Intent intent = new Intent(HomeActivity.this, PhoneActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //For login to clear this screen for that did not back this screen

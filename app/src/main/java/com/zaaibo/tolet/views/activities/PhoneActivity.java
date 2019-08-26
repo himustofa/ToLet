@@ -46,7 +46,7 @@ public class PhoneActivity extends AppCompatActivity {
 
         mNetworkReceiver = new MyNetworkReceiver(this);
         //mProgress = new ProgressDialog(this);
-        mUser = SharedPrefManager.getInstance(this).getUserModel();
+        mUser = SharedPrefManager.getInstance(this).getUser();
         mLoggedIn = SharedPrefManager.getInstance(this).getUserIsLoggedIn();
 
         //===============================================| findViewById
@@ -106,7 +106,7 @@ public class PhoneActivity extends AppCompatActivity {
                     String phone = editText.getText().toString().trim();
                     if (!TextUtils.isEmpty(phone)) {
                         Utility.dismissProgressDialog(mProgress);
-                        SharedPrefManager.getInstance(PhoneActivity.this).savePhoneAndLoggedIn(code+ Utility.removeZero(phone), true);
+                        SharedPrefManager.getInstance(PhoneActivity.this).savePhoneAndLogInStatus(code+ Utility.removeZero(phone), true);
                         Intent intent = new Intent(PhoneActivity.this, PhoneVerifyActivity.class);
                         intent.putExtra(ConstantKey.USER_PHONE_KEY, code+Utility.removeZero(phone));
                         startActivity(intent);
