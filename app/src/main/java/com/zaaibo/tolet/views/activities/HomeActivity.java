@@ -52,6 +52,7 @@ import com.zaaibo.tolet.utils.GpsUtility;
 import com.zaaibo.tolet.utils.Utility;
 import com.zaaibo.tolet.utils.language.LocaleHelper;
 import com.zaaibo.tolet.viewmodels.PostAdViewModel;
+import com.zaaibo.tolet.views.adapters.MarkerInfoAdapter;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -359,27 +360,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     String[] arr = obj.getImageUrl().replaceAll("[\\[\\]]", "").split(",");
                     //mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))); //Default Icon
                     //mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress())).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.admin)); //PNG Icon
-                    mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).icon(Utility.getMarkerIconFromDrawable( getApplicationContext().getResources().getDrawable(R.drawable.ic_icon_house) ))); //XML Icon
+                    //mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).icon(Utility.getMarkerIconFromDrawable( getApplicationContext().getResources().getDrawable(R.drawable.ic_icon_house) ))); //XML Icon
 
-                    mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+                    MarkerInfoAdapter mAdapter = new MarkerInfoAdapter(HomeActivity.this, arr, obj);
+                    mMap.setInfoWindowAdapter(mAdapter);
+                    Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).snippet(getResources().getString(R.string.app_name)).icon(Utility.getMarkerIconFromDrawable( getApplicationContext().getResources().getDrawable(R.drawable.ic_icon_house) ))); //XML Icon
+                    //marker.showInfoWindow();
+                    mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                         @Override
-                        public View getInfoWindow(Marker marker) {
-                            return null;
-                        }
-                        @Override
-                        public View getInfoContents(Marker marker) {
-                            View row = getLayoutInflater().inflate(R.layout.marker_info_window, null);
-                            Picasso.get().load(arr[0]).into(((CircleImageView) row.findViewById(R.id.photo)));
-                            ((TextView) row.findViewById(R.id.name)).setText(obj.getOwnerName());
-                            ((TextView) row.findViewById(R.id.phone)).setText(obj.getOwnerMobile());
-                            ((TextView) row.findViewById(R.id.address)).setText(obj.getAddress());
-                            ((TextView) row.findViewById(R.id.snippet)).setText(marker.getSnippet());
-                            return row;
+                        public void onInfoWindowClick(Marker marker) {
+                            Toast.makeText(HomeActivity.this, ""+obj.getOwnerName(), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
             }
         }, 3000);
+
         //---------------------------------------------| MarkerDrag Listener for Origin
         /*Utility.markerDragListener(new Utility.MarkerDragCallback() {
             @Override
