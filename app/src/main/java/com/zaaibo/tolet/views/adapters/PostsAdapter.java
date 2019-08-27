@@ -39,6 +39,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.zaaibo.tolet.R;
 import com.zaaibo.tolet.models.Feedback;
@@ -86,11 +87,22 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
         PostAd model = arrayList.get(position);
 
         String[] arr = model.getImageUrl().replaceAll("[\\[\\]]", "").split(",");
-        Picasso.get().load(arr[0]).into((holder.imageUrl));
+        //Picasso.get().load(arr[0]).into((holder.imageUrl));
         //Glide.with(mContext).asBitmap().load(arr[0]).into(holder.imageUrl);
         holder.rentPrice.setText("TK "+model.getRentPrice()+" /monthly");
         holder.address.setText(model.getAddress());
         holder.description.setText(model.getBedrooms()+" Beds, "+model.getBathrooms()+" Baths, "+model.getSquareFootage()+" (sq.ft)"); //4 Beds, 3 Baths, 1200 (sq.ft)
+
+        Picasso.get().load(arr[0]).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.ic_logo_ride).into(holder.imageUrl, new com.squareup.picasso.Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+            @Override
+            public void onError(Exception e) {
+                Picasso.get().load(arr[0]).placeholder(R.drawable.ic_logo_ride).into((holder.imageUrl));
+            }
+        });
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override

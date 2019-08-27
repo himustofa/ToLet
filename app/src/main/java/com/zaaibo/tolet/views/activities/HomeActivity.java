@@ -362,6 +362,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     //mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress())).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.admin)); //PNG Icon
                     //mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).icon(Utility.getMarkerIconFromDrawable( getApplicationContext().getResources().getDrawable(R.drawable.ic_icon_house) ))); //XML Icon
 
+                    //multiple markers with multiple information show on markers for android google maps
                     Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).snippet(getResources().getString(R.string.app_name)).icon(Utility.getMarkerIconFromDrawable( getApplicationContext().getResources().getDrawable(R.drawable.ic_icon_house) ))); //XML Icon
                     //marker.showInfoWindow();
                     MarkerInfoAdapter mAdapter = new MarkerInfoAdapter(HomeActivity.this, arr, obj);

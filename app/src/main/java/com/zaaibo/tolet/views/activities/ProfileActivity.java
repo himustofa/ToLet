@@ -45,6 +45,7 @@ import com.zaaibo.tolet.utils.ConstantKey;
 import com.zaaibo.tolet.utils.PermissionUtility;
 import com.zaaibo.tolet.utils.Utility;
 import com.zaaibo.tolet.utils.language.LocaleHelper;
+import com.zaaibo.tolet.utils.network.Network;
 import com.zaaibo.tolet.viewmodels.UserViewModel;
 
 import java.io.File;
@@ -212,8 +213,12 @@ public class ProfileActivity extends AppCompatActivity {
                     } else if (relation.equals("Marital Status")) {
                         Utility.alertDialog(ProfileActivity.this, "Please change your marital status");
                     } else {
-                        mProgress = Utility.showProgressDialog(ProfileActivity.this, getResources().getString( R.string.progress), false);
-                        storeToDatabase(mAuthId, name, relation, occupation, email, mPhone, birth, address, isUserOwner, mImageUrl, mToken);
+                        if (Network.haveNetwork(ProfileActivity.this)) {
+                            mProgress = Utility.showProgressDialog(ProfileActivity.this, getResources().getString(R.string.progress), false);
+                            storeToDatabase(mAuthId, name, relation, occupation, email, mPhone, birth, address, isUserOwner, mImageUrl, mToken);
+                        } else {
+                            Utility.alertDialog(ProfileActivity.this, getString(R.string.network_unavailable));
+                        }
                     }
                     break;
                 default:

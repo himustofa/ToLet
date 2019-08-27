@@ -45,6 +45,7 @@ import com.zaaibo.tolet.session.SharedPrefManager;
 import com.zaaibo.tolet.utils.ConstantKey;
 import com.zaaibo.tolet.utils.Utility;
 import com.zaaibo.tolet.utils.language.LocaleHelper;
+import com.zaaibo.tolet.utils.network.Network;
 import com.zaaibo.tolet.viewmodels.PostAdViewModel;
 
 import java.text.SimpleDateFormat;
@@ -148,17 +149,22 @@ public class PostAdActivity extends AppCompatActivity {
 
                 Log.d(TAG, "====" + String.valueOf(postImageUri.size()));
 
-                if (postImageUri.size() > 0 && !address.isEmpty() && mUser != null) {
-                    if (mUser.getIsUserOwner().equals("Owner")) {
-                        PostAd post = new PostAd(mUser.getUserAuthId(), mUser.getUserToken(), ownerName, ownerEmail, ownerMobile, isOwnerMobileHide, propertyType, renterType, rentPrice, bedrooms, bathrooms, squareFootage, amenities, selectLocation, address, String.valueOf(mLatLng.latitude), String.valueOf(mLatLng.longitude), description, Arrays.toString(postImageUri.toArray()), "");
-                        mProgress = Utility.showProgressDialog(PostAdActivity.this, getResources().getString(R.string.progress), false);
-                        storeToDatabase(post);
+                if(Network.haveNetwork(PostAdActivity.this)) {
+                    if (postImageUri.size() > 0 && !address.isEmpty() && mUser != null) {
+                        if (mUser.getIsUserOwner().equals("Owner")) {
+                            PostAd post = new PostAd(mUser.getUserAuthId(), mUser.getUserToken(), ownerName, ownerEmail, ownerMobile, isOwnerMobileHide, propertyType, renterType, rentPrice, bedrooms, bathrooms, squareFootage, amenities, selectLocation, address, String.valueOf(mLatLng.latitude), String.valueOf(mLatLng.longitude), description, Arrays.toString(postImageUri.toArray()), "");
+                            mProgress = Utility.showProgressDialog(PostAdActivity.this, getResources().getString(R.string.progress), false);
+                            storeToDatabase(post);
+                        } else {
+                            Utility.alertDialog(PostAdActivity.this, getResources().getString(R.string.msg_register_user));
+                        }
                     } else {
-                        Utility.alertDialog(PostAdActivity.this, getResources().getString(R.string.msg_register_user));
+                        Utility.alertDialog(PostAdActivity.this, getResources().getString(R.string.msg_photo_add));
                     }
                 } else {
-                    Utility.alertDialog(PostAdActivity.this, getResources().getString(R.string.msg_photo_add));
+                    Utility.alertDialog(PostAdActivity.this, getString(R.string.network_unavailable));
                 }
+
                 //------------------------------------------------------
             }
         });

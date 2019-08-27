@@ -120,13 +120,20 @@ public class FirebaseRepository implements IFirebaseRepository {
     }
 
     //===============================================| Get
+    //https://stackoverflow.com/questions/30564735/android-firebase-simply-get-one-child-objects-data
     public void getUserData(final UserCallback mCallback, String mUserAuthId) {
-        Query query = FirebaseDatabase.getInstance().getReference(ConstantKey.USER_NODE).child(mUserAuthId);
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference(ConstantKey.USER_NODE).child(mUserAuthId);
+        mDatabaseRef.keepSynced(true);
+        mDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getChildrenCount() > 0) {
-                    User model = dataSnapshot.getValue(User.class);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.getChildrenCount() > 0) {
+                    //String value = (String) snapshot.getValue(); //Get all child data
+                    //OR
+                    //String singleValue = (String) snapshot.child("userFullName").getValue(); //Get single child data
+
+                    User model = snapshot.getValue(User.class);
+                    String key = snapshot.getKey();
                     mCallback.onCallback(model);
                 } else {
                     mCallback.onCallback(null);
@@ -139,7 +146,6 @@ public class FirebaseRepository implements IFirebaseRepository {
             }
         });
     }
-
     public interface UserCallback {
         void onCallback(User model);
     }
@@ -147,6 +153,7 @@ public class FirebaseRepository implements IFirebaseRepository {
     public void getAllPostAd(final PostsAdCallback mCallback) {
         ArrayList<PostAd> arrayList = new ArrayList<>();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference(ConstantKey.USER_POST_NODE);
+        mDatabaseRef.keepSynced(true); //firebase load offline data
         mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -228,6 +235,7 @@ public class FirebaseRepository implements IFirebaseRepository {
     public void getNotifications(final NotificationCallback mCallback, String mAuthId) {
         ArrayList<User> arrayList = new ArrayList<>();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference(ConstantKey.NOTIFICATION_POST_NODE).child(mAuthId);
+        mDatabaseRef.keepSynced(true); //firebase load offline data
         mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -257,6 +265,7 @@ public class FirebaseRepository implements IFirebaseRepository {
     public void getAllFeedback(final GetFeedbackCallback mCallback, String mAuthId) {
         ArrayList<Feedback> arrayList = new ArrayList<>();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference(ConstantKey.FEEDBACK_POST_NODE).child(mAuthId);
+        mDatabaseRef.keepSynced(true); //firebase load offline data
         mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
