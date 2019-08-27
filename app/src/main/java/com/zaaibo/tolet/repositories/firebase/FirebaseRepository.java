@@ -10,6 +10,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,102 +29,16 @@ import com.zaaibo.tolet.utils.ConstantKey;
 
 import java.util.ArrayList;
 
-public class FirebaseRepository implements IFirebaseRepository {
+public class FirebaseRepository {
 
     private static final String TAG = "FirebaseRepository";
     private DatabaseReference mDatabaseRef;
-
-    /**********************************************************************************
-     * Get/Fetch
-     ***********************************************************************************/
-
-    @Override
-    public User getUserById(String mAuthId) {
-        return null;
-    }
-
-    @Override
-    public ArrayList<PostAd> getPostAdList() {
-        return null;
-    }
-
-    @Override
-    public ArrayList<PostAd> getAllPostAdByFilter(Filter mFilter) {
-        return null;
-    }
-
-    @Override
-    public PostAd getPostAdById(String mAuthId) {
-        return null;
-    }
-
-    @Override
-    public ArrayList<User> getAllNotificationById(String mAuthId) {
-        return null;
-    }
-
-    @Override
-    public ArrayList<Feedback> getAllFeedback(String mAuthId) {
-        return null;
-    }
-
-    /**********************************************************************************
-     * Save
-     ***********************************************************************************/
-
-    @Override
-    public String saveUser(User mUser) {
-        return null;
-    }
-
-    @Override
-    public String savePostAd(PostAd mPostAd) {
-        return null;
-    }
-
-    @Override
-    public String saveNotification(String mOwnerAuthId, User mUser) {
-        return null;
-    }
-
-    @Override
-    public String saveFeedback(Feedback mFeedback) {
-        return null;
-    }
-
-    /**********************************************************************************
-     * Save Image
-     ***********************************************************************************/
-
-    @Override
-    public String saveImageByPath(Uri uri, String mDirectory, String mAuthId) {
-        return null;
-    }
-
-    /**********************************************************************************
-     * Delete
-     ***********************************************************************************/
-
-    @Override
-    public String deleteFeedbackById(String mAuthId) {
-        return null;
-    }
-
-    @Override
-    public String deletePostAdById(String mOwnerAuthId) {
-        return null;
-    }
-
-    @Override
-    public String deleteImageByUrl(String mImageUrl) {
-        return null;
-    }
 
     //===============================================| Get
     //https://stackoverflow.com/questions/30564735/android-firebase-simply-get-one-child-objects-data
     public void getUserData(final UserCallback mCallback, String mUserAuthId) {
         mDatabaseRef = FirebaseDatabase.getInstance().getReference(ConstantKey.USER_NODE).child(mUserAuthId);
-        mDatabaseRef.keepSynced(true);
+        mDatabaseRef.keepSynced(true); //firebase load offline data
         mDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -183,6 +98,7 @@ public class FirebaseRepository implements IFirebaseRepository {
     public void getAllPostAdByLocation(final PostsAdCallback mCallback, Filter filter) {
         ArrayList<PostAd> arrayList = new ArrayList<>();
         Query query = FirebaseDatabase.getInstance().getReference().child(ConstantKey.USER_POST_NODE).orderByChild(PostAd.getLocationFieldName()).equalTo(filter.getLocation());
+        query.keepSynced(true); //firebase load offline data
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -209,6 +125,7 @@ public class FirebaseRepository implements IFirebaseRepository {
 
     public void getPostAdById(final PostAdCallback mCallback, String mAuthId) {
         mDatabaseRef = FirebaseDatabase.getInstance().getReference(ConstantKey.USER_POST_NODE).child(mAuthId);
+        mDatabaseRef.keepSynced(true); //firebase load offline data
         mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -463,23 +380,4 @@ public class FirebaseRepository implements IFirebaseRepository {
         void onCallback(String result);
     }
 
-
-    /*
-    public void removeAllData() {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Query applesQuery = ref.child("firebase-test").orderByChild("title").equalTo("Apple");
-        applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
-                    appleSnapshot.getRef().removeValue();
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
-            }
-        });
-    }
-    */
 }
