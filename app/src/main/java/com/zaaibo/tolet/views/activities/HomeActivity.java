@@ -20,7 +20,6 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -51,6 +50,7 @@ import com.zaaibo.tolet.utils.ConstantKey;
 import com.zaaibo.tolet.utils.GpsUtility;
 import com.zaaibo.tolet.utils.Utility;
 import com.zaaibo.tolet.utils.language.LocaleHelper;
+import com.zaaibo.tolet.utils.network.Network;
 import com.zaaibo.tolet.viewmodels.PostAdViewModel;
 import com.zaaibo.tolet.views.adapters.MarkerInfoAdapter;
 
@@ -365,6 +365,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     //multiple markers with multiple information show on markers for android google maps
                     Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(obj.getAddress()).snippet(getResources().getString(R.string.app_name)).icon(Utility.getMarkerIconFromDrawable( getApplicationContext().getResources().getDrawable(R.drawable.ic_icon_house) ))); //XML Icon
                     //marker.showInfoWindow();
+
+                    //---------------------------------------------| Add titles for showing offline google maps
                     MarkerInfoAdapter mAdapter = new MarkerInfoAdapter(HomeActivity.this, arr, obj);
                     mMap.setInfoWindowAdapter(mAdapter);
                     mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
@@ -462,9 +464,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 public void onSuccess(Location location) {
                     if (location != null) {
                         LatLng origin = new LatLng(location.getLatitude(),location.getLongitude());
-                        String mAddress = Utility.getAddress(HomeActivity.this, origin);
                         Utility.moveToLocation(mMap, new LatLng(origin.latitude, origin.longitude));
-                        SharedPrefManager.getInstance(HomeActivity.this).saveCurrentLatLng(origin);
+                        if (Network.haveNetwork(HomeActivity.this)) {
+                            String mAddress = Utility.getAddress(HomeActivity.this, origin);
+                            SharedPrefManager.getInstance(HomeActivity.this).saveCurrentLatLng(origin);
+                        }
                     }
                 }
             });

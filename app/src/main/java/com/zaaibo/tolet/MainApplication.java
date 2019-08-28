@@ -37,6 +37,8 @@ public class MainApplication extends Application {
         loadImageOfflineByPicasso();
     }
 
+    //Need to google maps offline | Download areas and navigate offline
+
     /**********************************************************************************
      * Start: Enabling Offline Capabilities on Android
      * Link: https://firebase.google.com/docs/database/android/offline-capabilities
@@ -61,7 +63,7 @@ public class MainApplication extends Application {
             @Override
             public void onComplete(DatabaseError error, @NonNull DatabaseReference reference) {
                 if (error != null) {
-                    Log.d(TAG, "could not establish onDisconnect event:" + error.getMessage());
+                    Log.e(TAG, "could not establish onDisconnect event:" + error.getMessage());
                 }
             }
         });
@@ -77,13 +79,13 @@ public class MainApplication extends Application {
                 if (connected) {
                     Log.d(TAG, "connected");
                 } else {
-                    Log.d(TAG, "not connected");
+                    Log.e(TAG, "not connected");
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Listener was cancelled");
+                Log.e(TAG, "Listener was cancelled"+error.getMessage());
             }
         });
     }
@@ -107,14 +109,12 @@ public class MainApplication extends Application {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.w(TAG, "Listener was cancelled");
+                Log.e(TAG, "Listener was cancelled"+error.getMessage());
             }
         });
     }
 
-
-    //Need to google maps offline
-
+    //Firebase android developer group solution
     public void setOfflineConnection() {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null) {
@@ -126,6 +126,7 @@ public class MainApplication extends Application {
                 }
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.e(TAG, ""+databaseError.getMessage());
                 }
             });
         }

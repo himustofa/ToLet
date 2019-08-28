@@ -5,7 +5,6 @@ import android.content.Context;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 
 public class Network {
 
@@ -41,12 +40,12 @@ public class Network {
         try {
             gpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         } catch (Exception e) {
-            Log.d(TAG, e.getMessage());
+            e.printStackTrace();
         }
         try {
             networkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
         } catch (Exception e) {
-            Log.d(TAG, e.getMessage());
+            e.printStackTrace();
         }
 
         /*if(!gpsEnabled && !networkEnabled) {
