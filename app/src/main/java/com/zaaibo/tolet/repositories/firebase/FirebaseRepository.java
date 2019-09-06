@@ -292,9 +292,9 @@ public class FirebaseRepository {
 
     //===============================================| Save image to firebase storage
     public void uploadImageToStorage(final ImageStorageCallback mCallback, Uri uri, String mDirectory, String mAuthId) {
-        final StorageReference filePath = FirebaseStorage.getInstance().getReference(mDirectory + "/" + mAuthId + ".jpg");
+        final StorageReference storageRef = FirebaseStorage.getInstance().getReference(mDirectory + "/" + mAuthId + ".jpg");
         if (uri != null) {
-            filePath.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            storageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     //Log.d(TAG, "Image stored successfully");
@@ -305,7 +305,7 @@ public class FirebaseRepository {
                                 mCallback.onCallback(result);
                             }
                         }
-                    }, uri, filePath);
+                    }, uri, storageRef);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -317,17 +317,17 @@ public class FirebaseRepository {
                                 mCallback.onCallback(result);
                             }
                         }
-                    }, uri, filePath);
+                    }, uri, storageRef);
                     //Log.d(TAG, "Exception: " + e.getMessage());
                 }
             });
         }
     }
-    private void onSuccessImageStorage(final ImageStorageCallback mCallback, Uri uri, final StorageReference filePath) {
-        filePath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+    private void onSuccessImageStorage(final ImageStorageCallback mCallback, Uri uri, final StorageReference storageRef) {
+        storageRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
                         mCallback.onCallback(uri.toString());

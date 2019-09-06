@@ -105,7 +105,7 @@
                 android:id="@+id/userPhoneNumber"
                 android:hint="@string/reg_phone_number"
                 android:inputType="phone"
-                android:maxLength="11"
+                android:maxLength="15"
                 android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

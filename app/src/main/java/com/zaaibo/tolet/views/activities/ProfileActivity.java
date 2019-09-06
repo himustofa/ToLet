@@ -202,8 +202,8 @@ public class ProfileActivity extends AppCompatActivity {
                     if (TextUtils.isEmpty(name) && TextUtils.isEmpty(phone) && mPhone != null) {
                         layoutName.setError("required!");
                         layoutPhone.setError("required!");
-                    } else if (phone.length() != 11) {
-                        layoutPhone.setError("length must be 11 digits");
+                    } else if (phone.length() != 15) {
+                        layoutPhone.setError("length must be 15 digits");
                     } else if (mImageUrl == null) {
                         Utility.alertDialog(ProfileActivity.this, getResources().getString( R.string.upload_photo));
                     } else if (mAuthId == null) {
