@@ -12,7 +12,7 @@ public class ConstantKey {
     public static final String NOTIFICATION_POST_NODE = "tolet_notification";
     public static final String FEEDBACK_POST_NODE = "tolet_feedback";
 
-    public final static String SERVER_KEY = "AAAAoOOazcM:APA91bHaPQx7FPhOX3BocBoyJNkCK5DPym2T04Qoh8NU3H1IO-FNQXEJ0HJoBxAyxR0p0XrtUAN66iw1aM_dnmG7Z5lPkvJDbdzLESfXagx8bxL2u13zExpBfjdu8R1oF-cejp6hw3Q9";
+    public final static String SERVER_KEY = "HERE_YOUR_SERVER_KEY";
 
     public final static String[] countryAreaCodes = {"+93", "+355", "+213",
             "+376", "+244", "+672", "+54", "+374", "+297", "+61", "+43", "+994", "+973",
